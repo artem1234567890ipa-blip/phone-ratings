@@ -258,7 +258,7 @@ export const phones: Phone[] = [
   // ══════════════════════════════════════════════════════════
   {
     id:"s1", slug:"samsung-galaxy-s26-ultra", name:"Samsung Galaxy S26 Ultra", brand:"Samsung",
-    image: GC("samsung","galaxy-s26-ultra"),
+    image:G("samsung-galaxy-s23-ultra-5g"),
     price:139990, priceLabel:"от 139 990 ₽", year:2026, color:"#1A1A1A",
     isNew:true, isTrending:true, popularity:97,
     pros:["200 МП f/1.4 камера","Snapdragon 8 Elite Gen 5","65 Вт быстрая зарядка","S Pen в комплекте"],
@@ -274,7 +274,7 @@ export const phones: Phone[] = [
   },
   {
     id:"s2", slug:"samsung-galaxy-s26-plus", name:"Samsung Galaxy S26+", brand:"Samsung",
-    image: GC("samsung","galaxy-s26-plus"),
+    image:G("samsung-galaxy-s23-ultra-5g"),
     price:119990, priceLabel:"от 119 990 ₽", year:2026, color:"#4A90D9", isNew:true, popularity:88,
     pros:["Snapdragon 8 Elite Gen 5","Тонкий корпус 7.3 мм","Большая батарея 4900 мАч"],
     cons:["Нет S Pen","Не 200 МП камера"],
@@ -289,7 +289,7 @@ export const phones: Phone[] = [
   },
   {
     id:"s3", slug:"samsung-galaxy-s26", name:"Samsung Galaxy S26", brand:"Samsung",
-    image: GC("samsung","galaxy-s26"),
+    image:G("samsung-galaxy-s23-ultra-5g"),
     price:94990, priceLabel:"от 94 990 ₽", year:2026, color:"#2B5EA7", isNew:true, popularity:84,
     pros:["Snapdragon 8 Elite Gen 5","Лёгкий 158 г","Тонкий 7.2 мм"],
     cons:["Маленькая батарея 4300 мАч","Нет S Pen","25 Вт зарядка"],
@@ -558,7 +558,7 @@ export const phones: Phone[] = [
   },
   {
     id:"op2", slug:"oneplus-13r", name:"OnePlus 13R", brand:"OnePlus",
-    image: OP("202501/06/1-m00-4a-58-rb8bwwakr22qklylaaikxqyfsgo562.png"),
+    image:G("oneplus-13"),
     price:49990, priceLabel:"от 49 990 ₽", year:2025, color:"#2C3E50", isNew:true, popularity:74,
     pros:["6000 мАч батарея","Snapdragon 8 Gen 3","80 Вт зарядка","Хорошая цена"],
     cons:["Камера уступает флагманам","IP65"],
@@ -832,7 +832,7 @@ export const phones: Phone[] = [
   // ══════════════════════════════════════════════════════════
   {
     id:"o1", slug:"oppo-find-x8-pro", name:"OPPO Find X8 Pro", brand:"OPPO",
-    image: GC("oppo","find-x8-pro"),
+    image:G("oppo-find-x8-pro"),
     price:89990, priceLabel:"от 89 990 ₽", year:2024, color:"#1E3A5F", isNew:true, popularity:74,
     pros:["Dimensity 9400","Два перископных телефото","5900 мАч","80 Вт + 50 Вт беспроводная"],
     cons:["Нет Google на китайской версии","OPPO мало сервисов в РФ"],
@@ -847,7 +847,7 @@ export const phones: Phone[] = [
   },
   {
     id:"o2", slug:"oppo-reno-13-pro", name:"OPPO Reno 13 Pro", brand:"OPPO",
-    image: GC("oppo","reno-13-pro"),
+    image:G("oppo-find-x8-pro"),
     price:44990, priceLabel:"от 44 990 ₽", year:2024, color:"#8E44AD", popularity:62,
     pros:["Стильный дизайн","80 Вт зарядка","Хорошая камера для цены"],
     cons:["Dimensity 8350 — середняк","IP65"],
@@ -900,7 +900,7 @@ export const phones: Phone[] = [
   // ══════════════════════════════════════════════════════════
   {
     id:"as1", slug:"asus-rog-phone-9-pro", name:"Asus ROG Phone 9 Pro", brand:"Asus",
-    image: GC("asus","rog-phone-9-pro"),
+    image:G("asus-rog-phone-9-pro"),
     price:99990, priceLabel:"от 99 990 ₽", year:2024, color:"#FF0000",
     badge:"Лучший игровой", isNew:true, popularity:70,
     pros:["Snapdragon 8 Elite","165 Гц дисплей","5800 мАч","Активное воздушное охлаждение"],
@@ -916,7 +916,7 @@ export const phones: Phone[] = [
   },
   {
     id:"as2", slug:"asus-zenfone-11-ultra", name:"Asus Zenfone 11 Ultra", brand:"Asus",
-    image: GC("asus","zenfone-11-ultra"),
+    image:G("asus-zenfone-11-ultra"),
     price:74990, priceLabel:"от 74 990 ₽", year:2024, color:"#2C3E50", popularity:58,
     pros:["Snap 8 Gen 3","65 Вт зарядка","AI функции","Прочный корпус"],
     cons:["Большой 6.78\"","Нет беспроводной зарядки","IP65"],
@@ -1014,7 +1014,7 @@ export const phones: Phone[] = [
   },
   {
     id:"s13", slug:"samsung-galaxy-a35", name:"Samsung Galaxy A35", brand:"Samsung",
-    image: S("2403/gallery/ru-galaxy-a35-a356-sm-a356bzkacau-thumb"),
+    image:G("samsung-galaxy-s23-ultra-5g"),
     price:27990, priceLabel:"от 27 990 ₽", year:2024, color:"#6C757D", popularity:68,
     pros:["IP67","4 года обновлений","AMOLED экран","NFC"],
     cons:["Exynos 1380 средний","25 Вт зарядка"],
@@ -1029,7 +1029,7 @@ export const phones: Phone[] = [
   },
   {
     id:"s14", slug:"samsung-galaxy-m55", name:"Samsung Galaxy M55", brand:"Samsung",
-    image: GC("samsung","galaxy-m55"),
+    image:G("samsung-galaxy-m55"),
     price:31990, priceLabel:"от 31 990 ₽", year:2024, color:"#1B2C6E", popularity:60,
     pros:["Snap 7 Gen 1","45 Вт зарядка","5000 мАч","Большой экран"],
     cons:["IP54","Нет флагманских функций"],
@@ -1082,7 +1082,7 @@ export const phones: Phone[] = [
   // ══════════════════════════════════════════════════════════
   {
     id:"nk1", slug:"nokia-g60-5g", name:"Nokia G60 5G", brand:"Nokia",
-    image: GC("nokia","g60-5g"),
+    image:G("nokia-g60-5g"),
     price:19990, priceLabel:"от 19 990 ₽", year:2022, color:"#1565C0", popularity:50,
     pros:["3 года обновлений Android","Чистый Android","IP52","Доступная цена"],
     cons:["Snapdragon 695 средний","60 Гц дисплей","Камера слабая"],
@@ -1097,7 +1097,7 @@ export const phones: Phone[] = [
   },
   {
     id:"nk2", slug:"nokia-xr21", name:"Nokia XR21", brand:"Nokia",
-    image: GC("nokia","xr21"),
+    image:G("nokia-xr21"),
     price:29990, priceLabel:"от 29 990 ₽", year:2023, color:"#0D47A1", popularity:48,
     pros:["MIL-SPEC 810H прочный","IP68","3 года поддержки","Сапфировое стекло"],
     cons:["Snapdragon 695 — средний","Нет быстрой зарядки","Тяжёлый"],
@@ -1112,7 +1112,7 @@ export const phones: Phone[] = [
   },
   {
     id:"nk3", slug:"nokia-c32", name:"Nokia C32", brand:"Nokia",
-    image: GC("nokia","c32"),
+    image:G("nokia-g60-5g"),
     price:12990, priceLabel:"от 12 990 ₽", year:2023, color:"#37474F", popularity:45,
     pros:["Очень дёшево","2-дневная батарея","Чистый Android 13","Прочный корпус"],
     cons:["Helio G37 — бюджетный","HD+ экран","Нет 5G","Нет NFC"],
@@ -1131,7 +1131,7 @@ export const phones: Phone[] = [
   // ══════════════════════════════════════════════════════════
   {
     id:"if1", slug:"infinix-note-40-pro", name:"Infinix Note 40 Pro", brand:"Infinix",
-    image: GC("infinix","note-40-pro"),
+    image:G("infinix-gt-20-pro"),
     price:18990, priceLabel:"от 18 990 ₽", year:2024, color:"#7B1FA2", popularity:52,
     pros:["68 Вт зарядка","AMOLED экран","Хорошая ценность","6.78\" дисплей"],
     cons:["Helio G99 — бюджетный","IP53","Нет 5G"],
@@ -1146,7 +1146,7 @@ export const phones: Phone[] = [
   },
   {
     id:"if2", slug:"infinix-gt-20-pro", name:"Infinix GT 20 Pro", brand:"Infinix",
-    image: GC("infinix","gt-20-pro"),
+    image:G("infinix-gt-20-pro"),
     price:22990, priceLabel:"от 22 990 ₽", year:2024, color:"#FF5722", popularity:50,
     pros:["Dimensity 8200 Ultimate","RGB подсветка","144 Гц AMOLED","Хорошая цена"],
     cons:["Нет IP-рейтинга","Нет NFC","Геймерский стиль не для всех"],
@@ -1165,7 +1165,7 @@ export const phones: Phone[] = [
   // ══════════════════════════════════════════════════════════
   {
     id:"tc1", slug:"tecno-phantom-x2-pro", name:"Tecno Phantom X2 Pro", brand:"Tecno",
-    image: GC("tecno","phantom-x2-pro"),
+    image:G("tecno-phantom-x2-pro"),
     price:24990, priceLabel:"от 24 990 ₽", year:2022, color:"#B71C1C", popularity:46,
     pros:["Выдвижная камера-манипулятор","50 МП RGBW","Хороший звук","Флагманский дизайн"],
     cons:["Dimensity 9000 устарел","Нет 5G в РФ","Мало обновлений"],
@@ -1180,7 +1180,7 @@ export const phones: Phone[] = [
   },
   {
     id:"tc2", slug:"tecno-camon-30-premier", name:"Tecno Camon 30 Premier 5G", brand:"Tecno",
-    image: GC("tecno","camon-30-premier-5g"),
+    image:G("tecno-camon-30-premier-5g"),
     price:27990, priceLabel:"от 27 990 ₽", year:2024, color:"#1A237E", popularity:44,
     pros:["50 МП перископ","5G","Dimensity 8200","Беспроводная зарядка"],
     cons:["Мало обновлений","PolarAce слабее Leica","Мало сервисов в РФ"],
@@ -1199,7 +1199,7 @@ export const phones: Phone[] = [
   // ══════════════════════════════════════════════════════════
   {
     id:"z1", slug:"zte-nubia-z60-ultra", name:"ZTE Nubia Z60 Ultra", brand:"ZTE",
-    image: GC("zte","nubia-z60-ultra"),
+    image:G("zte-nubia-z60-ultra"),
     price:54990, priceLabel:"от 54 990 ₽", year:2023, color:"#1A1A2E", popularity:55,
     pros:["Snap 8 Gen 3","Под-экранная фронталка","35 МП фронталка","134 Вт зарядка"],
     cons:["Нет беспроводной","ZTE мало известна в РФ","IP54"],
@@ -1218,7 +1218,7 @@ export const phones: Phone[] = [
   // ══════════════════════════════════════════════════════════
   {
     id:"l1", slug:"lenovo-legion-phone-7-pro", name:"Lenovo Legion Phone 7 Pro", brand:"Lenovo",
-    image: GC("lenovo","legion-phone-7-pro"),
+    image:G("asus-rog-phone-8-pro"),
     price:59990, priceLabel:"от 59 990 ₽", year:2022, color:"#FF0000",
     badge:"Лучший игровой", popularity:52,
     pros:["Snap 8+ Gen 1","Двойная USB-C","Плечевые триггеры","68 Вт x2 зарядка"],
@@ -1238,7 +1238,7 @@ export const phones: Phone[] = [
   // ══════════════════════════════════════════════════════════
   {
     id:"tcl1", slug:"tcl-50-xl-nxtpaper", name:"TCL 50 XL NXTPaper", brand:"TCL",
-    image: GC("tcl","50-xl-nxtpaper"),
+    image:G("nokia-g60-5g"),
     price:14990, priceLabel:"от 14 990 ₽", year:2024, color:"#00796B", popularity:42,
     pros:["NXTPaper матовый экран без бликов","Доступная цена","Большой экран"],
     cons:["Helio G85 — очень слабый","Нет 5G","Нет NFC"],
@@ -1257,7 +1257,7 @@ export const phones: Phone[] = [
   // ══════════════════════════════════════════════════════════
   {
     id:"o3", slug:"oppo-find-n3-flip", name:"OPPO Find N3 Flip", brand:"OPPO",
-    image: GC("oppo","find-n3-flip"),
+    image:G("oppo-find-n3-flip"),
     price:74990, priceLabel:"от 74 990 ₽", year:2023, color:"#2980B9", popularity:60,
     pros:["Snap 8+ Gen 1","IP65 раскладушка","Hasselblad","50 Вт зарядка"],
     cons:["Нет 5× телефото","Тяжёлее Z Flip","Мало продаётся в РФ"],
@@ -1348,7 +1348,7 @@ export const phones: Phone[] = [
   // ══════════════════════════════════════════════════════════
   {
     id:"as3", slug:"asus-rog-phone-8-pro", name:"Asus ROG Phone 8 Pro", brand:"Asus",
-    image: GC("asus","rog-phone-8-pro"),
+    image:G("asus-rog-phone-8-pro"),
     price:84990, priceLabel:"от 84 990 ₽", year:2024, color:"#E53935", popularity:62,
     pros:["Snap 8 Gen 3","5000 мАч","IP54","65 Вт зарядка","165 Гц"],
     cons:["Геймерский стиль","Тяжёлый","Нет беспроводной зарядки"],
@@ -1486,7 +1486,7 @@ export const phones: Phone[] = [
    scores:{performance:90,camera:78,battery:70,display:88,design:96,value:70},totalScore:82},
 
   // ══ SAMSUNG — A series ════════════════════════════════
-  {id:"s26x",slug:"samsung-galaxy-a54",name:"Samsung Galaxy A54",brand:"Samsung",image:S("2304/gallery/ru-galaxy-a54-a546-sm-a546ezknser-thumb"),price:34990,priceLabel:"от 34 990 ₽",year:2023,color:"#FFFFFF",popularity:74,
+  {id:"s26x",slug:"samsung-galaxy-a54",name:"Samsung Galaxy A54",brand:"Samsung",image:G("samsung-galaxy-s23-ultra-5g"),price:34990,priceLabel:"от 34 990 ₽",year:2023,color:"#FFFFFF",popularity:74,
    specs:{display:'6.4" Super AMOLED, 2340×1080, 120 Гц',processor:"Exynos 1380",ram:"8 ГБ",storage:"128 ГБ — 256 ГБ",mainCamera:"50+12+5 МП, f/1.8",frontCamera:"32 МП, f/2.2",battery:"5000 мАч",os:"Android 13 → 16",charging:"25 Вт",weight:"202 г",dimensions:"158.2×76.7×8.2 мм",protection:"IP67",nfc:true,fiveG:true},
    scores:{performance:66,camera:74,battery:86,display:83,design:78,value:90},totalScore:80},
   {id:"s27x",slug:"samsung-galaxy-a53",name:"Samsung Galaxy A53",brand:"Samsung",image:G("samsung-galaxy-a54"),price:24990,priceLabel:"от 24 990 ₽",year:2022,color:"#4B0082",popularity:68,
@@ -1501,7 +1501,7 @@ export const phones: Phone[] = [
   {id:"s30x",slug:"samsung-galaxy-a15-5g",name:"Samsung Galaxy A15 5G",brand:"Samsung",image:G("samsung-galaxy-a55"),price:15990,priceLabel:"от 15 990 ₽",year:2023,color:"#4A4A4A",popularity:60,
    specs:{display:'6.5" Super AMOLED, 2340×1080, 90 Гц',processor:"MediaTek Dimensity 6100+",ram:"4 ГБ",storage:"128 ГБ",mainCamera:"50+5+2 МП, f/1.8",frontCamera:"13 МП, f/2.0",battery:"5000 мАч",os:"Android 14",charging:"25 Вт",weight:"200 г",dimensions:"160.1×76.8×8.4 мм",protection:"IP54",nfc:false,fiveG:true},
    scores:{performance:58,camera:60,battery:86,display:76,design:68,value:92},totalScore:73},
-  {id:"s31x",slug:"samsung-galaxy-a14",name:"Samsung Galaxy A14",brand:"Samsung",image:GC("samsung","galaxy-a14"),price:12990,priceLabel:"от 12 990 ₽",year:2023,color:"#2C3E50",popularity:58,
+  {id:"s31x",slug:"samsung-galaxy-a14",name:"Samsung Galaxy A14",brand:"Samsung",image:G("samsung-galaxy-s23-ultra-5g"),price:12990,priceLabel:"от 12 990 ₽",year:2023,color:"#2C3E50",popularity:58,
    specs:{display:'6.6" PLS IPS, 2408×1080, 90 Гц',processor:"Exynos 850",ram:"4 ГБ",storage:"64 ГБ — 128 ГБ",mainCamera:"50+5+2 МП, f/1.8",frontCamera:"13 МП, f/2.0",battery:"5000 мАч",os:"Android 13",charging:"15 Вт",weight:"201 г",dimensions:"167.7×78.6×9.1 мм",protection:"IP54",nfc:false,fiveG:false},
    scores:{performance:48,camera:58,battery:86,display:70,design:64,value:92},totalScore:70},
 
@@ -1583,10 +1583,10 @@ export const phones: Phone[] = [
    scores:{performance:42,camera:50,battery:86,display:62,design:60,value:96},totalScore:66},
 
   // ══ ONEPLUS — дополнительно ════════════════════════════
-  {id:"op4",slug:"oneplus-12r",name:"OnePlus 12R",brand:"OnePlus",image:OP("202401/08/1-m00-4a-58-rb8bwwakr22aqlylaagqsqvnl4ca553.png"),price:44990,priceLabel:"от 44 990 ₽",year:2024,color:"#2C3E50",popularity:68,
+  {id:"op4",slug:"oneplus-12r",name:"OnePlus 12R",brand:"OnePlus",image:G("oneplus-13"),price:44990,priceLabel:"от 44 990 ₽",year:2024,color:"#2C3E50",popularity:68,
    specs:{display:'6.78" LTPO AMOLED, 2780×1264, 1-120 Гц',processor:"Snapdragon 8 Gen 2",ram:"16 ГБ",storage:"256 ГБ — 512 ГБ",mainCamera:"50+8+2 МП, f/1.8",frontCamera:"16 МП, f/2.4",battery:"5500 мАч",os:"Android 14, OxygenOS 14",charging:"80 Вт",weight:"207 г",dimensions:"163.3×75.4×8.8 мм",protection:"IP65",nfc:true,fiveG:true},
    scores:{performance:90,camera:76,battery:90,display:88,design:82,value:88},totalScore:86},
-  {id:"op5",slug:"oneplus-12",name:"OnePlus 12",brand:"OnePlus",image:OP("202401/08/1-m00-4a-58-rb8bwwakrzyamqe4aaeqsqvnl4ca553.png"),price:59990,priceLabel:"от 59 990 ₽",year:2024,color:"#1B2A4A",popularity:74,
+  {id:"op5",slug:"oneplus-12",name:"OnePlus 12",brand:"OnePlus",image:G("oneplus-13"),price:59990,priceLabel:"от 59 990 ₽",year:2024,color:"#1B2A4A",popularity:74,
    specs:{display:'6.82" LTPO AMOLED, 3168×1440, 1-120 Гц',processor:"Snapdragon 8 Gen 3",ram:"12 ГБ",storage:"256 ГБ — 512 ГБ",mainCamera:"50+64+48 МП (Hasselblad), f/1.6",frontCamera:"32 МП, f/2.4",battery:"5400 мАч",os:"Android 14, OxygenOS 14",charging:"100 Вт / 50 Вт",weight:"220 г",dimensions:"164.3×75.8×9.15 мм",protection:"IP65",nfc:true,fiveG:true},
    scores:{performance:93,camera:88,battery:92,display:94,design:88,value:86},totalScore:90},
   {id:"op6",slug:"oneplus-11",name:"OnePlus 11",brand:"OnePlus",image:G("oneplus-11"),price:49990,priceLabel:"от 49 990 ₽",year:2023,color:"#1B2A4A",popularity:72,

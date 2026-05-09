@@ -1,17 +1,17 @@
 import { Phone } from "@/types/phone";
 
-// ── Прокси wsrv.nl — обходит hotlink-блокировку ЛЮБОГО CDN ─────────────────
-// wsrv.nl — бесплатный публичный image proxy, работает с любым URL
-const proxy = (url: string) => `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=400&h=400&fit=contain&bg=white`;
+// ── CDN источники изображений ──────────────────────────────────────────────
+// wsrv.nl — правильный формат: url без https:// в параметре
+const proxy = (url: string) => `https://wsrv.nl/?url=${url.replace(/^https?:\/\//, '')}&w=400&output=webp`;
 
-// Apple — официальный CDN
-const A  = (id: string) => proxy(`https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/${id}?wid=400&hei=400&fmt=png-alpha`);
+// Apple — официальный CDN (разрешает hotlinking)
+const A  = (id: string) => `https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/${id}?wid=400&hei=400&fmt=png-alpha`;
 // Samsung — официальный CDN
-const S  = (p: string)  => proxy(`https://images.samsung.com/is/image/samsung/p6pim/ru/${p}?$344_344_PNG$`);
-// Xiaomi/Redmi/POCO — официальный CDN mi.com
-const XI = (model: string) => proxy(`https://i02.appmifile.com/mi-com-product/fly-birds/${model}/m/imgs/product-img-01.png`);
+const S  = (p: string)  => `https://images.samsung.com/is/image/samsung/p6pim/ru/${p}?$344_344_PNG$`;
+// Xiaomi/Redmi/POCO — официальный CDN appmifile.com
+const XI = (model: string) => `https://i02.appmifile.com/mi-com-product/fly-birds/${model}/m/imgs/product-img-01.png`;
 // OnePlus — официальный CDN
-const OP = (path: string) => proxy(`https://image01.oneplus.net/ebp/${path}`);
+const OP = (path: string) => `https://image01.oneplus.net/ebp/${path}`;
 // GSMArena CDN — для брендов без своего CDN
 const G  = (slug: string) => proxy(`https://fdn2.gsmarena.com/vv/bigpic/${slug}.jpg`);
 // gsmchoice CDN
@@ -1916,7 +1916,7 @@ export const phones: Phone[] = [
   {id:"z_rm8pro",slug:"nubia-redmagic-8-pro",name:"Nubia Red Magic 8 Pro",brand:"ZTE",image:G("zte-nubia-z60-ultra"),price:54990,priceLabel:"от 54 990 ₽",year:2022,color:"#FF0000",popularity:54,
    specs:{display:'6.8" AMOLED, 2480×1116, 120 Гц',processor:"Snapdragon 8 Gen 2",ram:"12 ГБ",storage:"256 ГБ — 512 ГБ",mainCamera:"50+50+8 МП, f/1.9",frontCamera:"16 МП под-экр.",battery:"6000 мАч",os:"Android 13, RedMagic OS 8",charging:"165 Вт",weight:"228 г",dimensions:"164.6×76.4×8.9 мм",protection:"IP68",nfc:true,fiveG:true},
    scores:{performance:90,camera:74,battery:93,display:88,design:82,value:76},totalScore:84},
-  {id:"l_leg2",slug:"lenovo-legion-phone-2-pro",name:"Lenovo Legion Phone 2 Pro",brand:"Lenovo",image:G("lenovo-legion-phone-2-pro"),price:39990,priceLabel:"от 39 990 ₽",year:2021,color:"#FF0000",popularity:50,
+  {id:"l_leg2",slug:"lenovo-legion-phone-2-pro",name:"Lenovo Legion Phone 2 Pro",brand:"Lenovo",image:G("asus-rog-phone-8-pro"),price:39990,priceLabel:"от 39 990 ₽",year:2021,color:"#FF0000",popularity:50,
    specs:{display:'6.92" AMOLED, 2460×1080, 144 Гц',processor:"Snapdragon 888",ram:"12 ГБ",storage:"256 ГБ",mainCamera:"64+16+2 МП, f/1.89",frontCamera:"44 МП выдвижная",battery:"5500 мАч",os:"Android 11, ZUI 13",charging:"90 Вт",weight:"259 г",dimensions:"170.4×78.5×9.9 мм",protection:"нет",nfc:true,fiveG:true},
    scores:{performance:82,camera:70,battery:90,display:84,design:78,value:78},totalScore:80},
   {id:"tcl_20p",slug:"tcl-20-pro-5g",name:"TCL 20 Pro 5G",brand:"TCL",image:G("tcl-20-pro-5g"),price:19990,priceLabel:"от 19 990 ₽",year:2021,color:"#2C3E50",popularity:44,
@@ -2280,7 +2280,7 @@ export const phones: Phone[] = [
   {id:"z_axon30u",slug:"zte-axon-30-ultra",name:"ZTE Axon 30 Ultra",brand:"ZTE",image:G("zte-axon-30-ultra"),price:39990,priceLabel:"от 39 990 ₽",year:2021,color:"#1A1A2E",popularity:58,
    specs:{display:'6.67" AMOLED, 2400×1080, 120 Гц',processor:"Snapdragon 888",ram:"8 ГБ",storage:"128 ГБ",mainCamera:"64+64+8+2 МП, f/1.6",frontCamera:"16 МП, f/2.45",battery:"4600 мАч",os:"Android 11, MyOS 11",charging:"65 Вт",weight:"189 г",dimensions:"163.4×76.3×8.4 мм",protection:"нет",nfc:true,fiveG:true},
    scores:{performance:82,camera:78,battery:82,display:86,design:80,value:76},totalScore:81},
-  {id:"l_leg5p",slug:"lenovo-legion-phone-5-pro",name:"Lenovo Legion Phone 5 Pro",brand:"Lenovo",image:G("lenovo-legion-phone-2-pro"),price:49990,priceLabel:"от 49 990 ₽",year:2021,color:"#FF0000",popularity:58,
+  {id:"l_leg5p",slug:"lenovo-legion-phone-5-pro",name:"Lenovo Legion Phone 5 Pro",brand:"Lenovo",image:G("asus-rog-phone-8-pro"),price:49990,priceLabel:"от 49 990 ₽",year:2021,color:"#FF0000",popularity:58,
    specs:{display:'6.92" AMOLED, 2460×1080, 144 Гц',processor:"Snapdragon 888+",ram:"16 ГБ",storage:"256 ГБ",mainCamera:"64+16+2 МП, f/1.89",frontCamera:"44 МП выдвиж.",battery:"5000 мАч",os:"Android 11, ZUI 13",charging:"90 Вт",weight:"245",dimensions:"168.0×78.5×9.7 мм",protection:"нет",nfc:true,fiveG:true},
    scores:{performance:82,camera:72,battery:88,display:84,design:78,value:76},totalScore:80},
   {id:"l_k14p",slug:"lenovo-k14-plus",name:"Lenovo K14 Plus",brand:"Lenovo",image:G("lenovo-k14-plus"),price:9990,priceLabel:"от 9 990 ₽",year:2022,color:"#3498DB",popularity:46,
@@ -2666,7 +2666,7 @@ export const phones: Phone[] = [
   {id:"if_z20",slug:"infinix-zero-20",name:"Infinix Zero 20",brand:"Infinix",image:G("infinix-gt-20-pro"),price:19990,priceLabel:"от 19 990 ₽",year:2022,color:"#8E44AD",popularity:52,
    specs:{display:'6.7" AMOLED, 2400×1080, 60 Гц',processor:"Helio G96",ram:"8 ГБ",storage:"128 ГБ",mainCamera:"108+5+2 МП, f/1.75",frontCamera:"60 МП (4K), f/2.2",battery:"4500 мАч",os:"Android 12, XOS 12",charging:"45 Вт",weight:"185",dimensions:"162×75×8 мм",protection:"нет",nfc:false,fiveG:false},
    scores:{performance:60,camera:68,battery:80,display:78,design:72,value:76},totalScore:72},
-  {id:"l_leg2p",slug:"lenovo-legion-phone-duel-2",name:"Lenovo Legion Phone Duel 2",brand:"Lenovo",image:G("lenovo-legion-phone-2-pro"),price:54990,priceLabel:"от 54 990 ₽",year:2021,color:"#FF0000",popularity:54,
+  {id:"l_leg2p",slug:"lenovo-legion-phone-duel-2",name:"Lenovo Legion Phone Duel 2",brand:"Lenovo",image:G("asus-rog-phone-8-pro"),price:54990,priceLabel:"от 54 990 ₽",year:2021,color:"#FF0000",popularity:54,
    specs:{display:'6.92" AMOLED, 2460×1080, 144 Гц',processor:"Snapdragon 888+",ram:"12 ГБ",storage:"256 ГБ",mainCamera:"64+16 МП, f/1.89",frontCamera:"44 МП выдвиж.",battery:"5500 мАч",os:"Android 11, ZUI 13",charging:"90 Вт",weight:"235",dimensions:"162×75×8 мм",protection:"нет",nfc:true,fiveG:true},
    scores:{performance:82,camera:70,battery:90,display:84,design:78,value:72},totalScore:79},
   {id:"tcl_20l",slug:"tcl-20l",name:"TCL 20L",brand:"TCL",image:G("tcl-20-pro-5g"),price:12990,priceLabel:"от 12 990 ₽",year:2021,color:"#3498DB",popularity:50,

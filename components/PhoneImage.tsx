@@ -8,6 +8,7 @@ const BRAND_META: Record<string, { g1: string; g2: string }> = {
   Samsung:  { g1: "#1428a0", g2: "#0070c9" },
   Google:   { g1: "#0f9d58", g2: "#34a853" },
   Xiaomi:   { g1: "#ff6900", g2: "#ff9500" },
+  Redmi:    { g1: "#e62129", g2: "#ff4757" },
   OnePlus:  { g1: "#eb0029", g2: "#ff3b4e" },
   Sony:     { g1: "#001489", g2: "#003087" },
   Nothing:  { g1: "#2c2c2e", g2: "#48484a" },
@@ -29,43 +30,51 @@ const BRAND_META: Record<string, { g1: string; g2: string }> = {
 
 function PhoneSVG({ brand, name }: { brand: string; name: string }) {
   const meta = BRAND_META[brand] ?? { g1: "#3b82f6", g2: "#8b5cf6" };
-  const short = name.replace(brand, "").trim().split(" ").slice(0, 3).join(" ");
-  const uid = `ph_${brand.replace(/\W/g, "")}`;
+  const short = name.replace(brand, "").trim().split(" ").slice(0, 4).join(" ");
+  const uid = `ph_${brand.replace(/\W/g, "")}_${short.replace(/\W/g, "").slice(0, 6)}`;
 
   return (
-    <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+    <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" className="w-full h-full max-h-full">
       <defs>
         <linearGradient id={`${uid}_b`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={meta.g1}/>
-          <stop offset="100%" stopColor={meta.g2}/>
+          <stop offset="0%" stopColor={meta.g1} />
+          <stop offset="100%" stopColor={meta.g2} />
         </linearGradient>
         <linearGradient id={`${uid}_s`} x1="0%" y1="0%" x2="60%" y2="100%">
-          <stop offset="0%" stopColor="#0a0a1a"/>
-          <stop offset="100%" stopColor="#111827"/>
+          <stop offset="0%" stopColor="#0a0a1a" />
+          <stop offset="100%" stopColor="#111827" />
         </linearGradient>
       </defs>
-      {/* Body */}
-      <rect x="2" y="2" width="196" height="396" rx="32" fill={`url(#${uid}_b)`}/>
-      {/* Side buttons */}
-      <rect x="198" y="88" width="4" height="44" rx="2" fill="rgba(0,0,0,0.3)"/>
-      <rect x="198" y="142" width="4" height="44" rx="2" fill="rgba(0,0,0,0.3)"/>
-      <rect x="-2" y="78" width="4" height="32" rx="2" fill="rgba(0,0,0,0.25)"/>
-      <rect x="-2" y="118" width="4" height="56" rx="2" fill="rgba(0,0,0,0.25)"/>
-      {/* Screen */}
-      <rect x="11" y="30" width="178" height="340" rx="22" fill={`url(#${uid}_s)`}/>
-      {/* Dynamic island */}
-      <rect x="72" y="15" width="56" height="14" rx="7" fill="#000"/>
-      {/* Shine */}
-      <rect x="11" y="30" width="178" height="340" rx="22" fill="url(#shine)" opacity="0.05"/>
-      {/* Brand name */}
-      <text x="100" y="210" textAnchor="middle" fill="rgba(255,255,255,0.9)"
-        fontSize="18" fontWeight="700" fontFamily="system-ui,-apple-system,sans-serif">{brand}</text>
-      <text x="100" y="232" textAnchor="middle" fill="rgba(255,255,255,0.4)"
-        fontSize="10" fontFamily="system-ui,-apple-system,sans-serif">{short}</text>
-      {/* Home bar */}
-      <rect x="72" y="358" width="56" height="4" rx="2" fill="rgba(255,255,255,0.18)"/>
+      <rect x="2" y="2" width="196" height="396" rx="32" fill={`url(#${uid}_b)`} />
+      <rect x="198" y="88" width="4" height="44" rx="2" fill="rgba(0,0,0,0.3)" />
+      <rect x="198" y="142" width="4" height="44" rx="2" fill="rgba(0,0,0,0.3)" />
+      <rect x="-2" y="78" width="4" height="32" rx="2" fill="rgba(0,0,0,0.25)" />
+      <rect x="-2" y="118" width="4" height="56" rx="2" fill="rgba(0,0,0,0.25)" />
+      <rect x="11" y="30" width="178" height="340" rx="22" fill={`url(#${uid}_s)`} />
+      <rect x="72" y="15" width="56" height="14" rx="7" fill="#000" />
+      <text x="100" y="207" textAnchor="middle" fill="rgba(255,255,255,0.9)"
+        fontSize="16" fontWeight="700" fontFamily="system-ui,-apple-system,sans-serif">{brand}</text>
+      <text x="100" y="228" textAnchor="middle" fill="rgba(255,255,255,0.45)"
+        fontSize="9" fontFamily="system-ui,-apple-system,sans-serif">{short}</text>
+      <rect x="72" y="358" width="56" height="4" rx="2" fill="rgba(255,255,255,0.18)" />
     </svg>
   );
+}
+
+// ── Multiple source fallback ─────────────────────────────────────────────────
+// If primary src fails, try alternatives before SVG
+function getAlternativeSrc(src: string, brand: string): string | null {
+  // If using wsrv.nl proxy, extract the original slug and try direct
+  const wsrvMatch = src.match(/wsrv\.nl\/\?url=([^&]+)/);
+  if (wsrvMatch) {
+    const decoded = decodeURIComponent(wsrvMatch[1]);
+    // Already a full URL in wsrv param
+    if (decoded.startsWith('fdn2.gsmarena')) {
+      // Try direct GSMArena URL (sometimes works without proxy)
+      return `https://${decoded}`;
+    }
+  }
+  return null;
 }
 
 // ── Component ────────────────────────────────────────────────────────────────
@@ -81,35 +90,49 @@ interface Props {
 }
 
 export default function PhoneImage({ src, alt, brand, name, fill, sizes, className, onLoad }: Props) {
-  const [error, setError] = useState(false);
+  const [errorCount, setErrorCount] = useState(0);
+  const [currentSrc, setCurrentSrc] = useState(src);
   const [loaded, setLoaded] = useState(false);
 
-  if (error) {
+  const handleError = () => {
+    if (errorCount === 0) {
+      // Try alternative src
+      const alt2 = getAlternativeSrc(currentSrc, brand);
+      if (alt2 && alt2 !== currentSrc) {
+        setCurrentSrc(alt2);
+        setErrorCount(1);
+        return;
+      }
+    }
+    // Give up - show SVG
+    setErrorCount(99);
+  };
+
+  const showSVG = errorCount >= 99;
+
+  if (showSVG) {
     return (
       <div className={`flex items-center justify-center ${fill ? "absolute inset-0" : "w-full h-full"}`}>
-        <PhoneSVG brand={brand} name={name}/>
+        <PhoneSVG brand={brand} name={name} />
       </div>
     );
   }
 
   return (
     <>
-      {/* Show SVG while loading */}
       {!loaded && (
         <div className={`flex items-center justify-center ${fill ? "absolute inset-0" : "w-full h-full"} z-0`}>
-          <PhoneSVG brand={brand} name={name}/>
+          <PhoneSVG brand={brand} name={name} />
         </div>
       )}
       <Image
-        src={src}
+        src={currentSrc}
         alt={alt}
         fill={fill}
         sizes={sizes}
-        className={`${className ?? ""} ${loaded ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}
-        unoptimized
-        onError={() => setError(true)}
+        className={`${className ?? ""} ${loaded ? "opacity-100" : "opacity-0"} transition-opacity duration-500 z-10 relative`}
+        onError={handleError}
         onLoad={() => { setLoaded(true); onLoad?.(); }}
-        style={fill ? {} : undefined}
       />
     </>
   );
